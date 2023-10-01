@@ -1,0 +1,73 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String  @id @default(cuid()) @map("_id")
+  email        String
+  name         String?
+  username     String  @unique
+  password     String
+  profileImage String?
+
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  // 刷新令牌
+  refreshToken RefreshToken[]
+  // 推文
+  tweet        Tweet[]
+  mediaFiles   MediaFile[]
+}
+
+model RefreshToken {
+  id    String @id @default(cuid()) @map("_id")
+  token String @unique
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id])
+}
+
+model Tweet {
+  id   String @id @default(cuid()) @map("_id")
+  text String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  // 作者
+
+  author   User   @relation(fields: [authorId], references: [id])
+  authorId String
+
+  replyToId  String?
+  replyTo    Tweet?      @relation("replies", fields: [replyToId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  replies    Tweet[]     @relation("replies")
+  mediaFiles MediaFile[]
+
+  @@index([authorId, replyToId])
+}
+
+model MediaFile {
+  id               String @id @default(cuid()) @map("_id")
+  url              String
+  providerPublicId String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user   User   @relation(fields: [userId], references: [id])
+  userId String
+
+  tweet   Tweet?  @relation(fields: [tweetId], references: [id])
+  tweetId String?
+}
