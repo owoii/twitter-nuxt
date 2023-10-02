@@ -4,12 +4,12 @@
 		<div class="flex flex-row">
 			<img :src="props.user.profileImage" class="w-10 h-10 rounded-full">
 			<div class="flex-col hidden ml-2 xl:flex">
-				<h1 class="text-sm font-bold text-gray-800 dark:text-white">{{ props.user.name }}</h1>
+				<h1 class="text-sm font-bold  text-gray-800 dark:text-white">{{ props.user.name }}</h1>
 				<p class="text-sm text-gray-400">{{ props.user.handle }}</p>
 			</div>
 		</div>
 		<!-- ICON -->
-		<div class="hidden ml-auto xl:block">
+		<div class="hidden ml-auto xl:block dark:text-white text-gray-800">
 			<div class="w-6 h-6">
 				<ChevronDownIcon />
 			</div>

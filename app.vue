@@ -39,8 +39,7 @@
 <script setup lang="ts">
 const darkMode = ref(true);
 const { initAuth, useAuthUser, useAuthLoading, logout } = useAuth();
-
-
+provide("darkMode", darkMode)
 useHead({
   script: [
     {
