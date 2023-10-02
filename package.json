@@ -7,7 +7,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "vercel-build": "prisma generate && prisma migrate deploy && next build"
+    "vercel-build": "prisma generate && prisma migrate dev --init && prisma migrate deploy && next build"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
