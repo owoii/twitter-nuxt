@@ -126,12 +126,27 @@ export default () => {
       }
     })
   }
+
+  const register = (data: any) => {
+    return new Promise(async (resolve, reject) => {
+      try {
+        await useFetchApi('/api/auth/register', {
+          method: "POST",
+          body: data
+        })
+        resolve(true)
+      } catch (error) {
+        reject(error)
+      }
+    })
+  }
   return {
     login,
     useAuthToken,
     useAuthUser,
     initAuth,
     useAuthLoading,
-    logout
+    logout,
+    register
   };
 };

@@ -2,7 +2,7 @@
   <div class="w-full">
     <div class="flex justify-center">
       <div class="w-10 h-10">
-        <LogoTwitter/>
+        <LogoTwitter />
       </div>
     </div>
     <div class="pt-5 space-y-6">
@@ -10,9 +10,11 @@
 
       <UIInput label="Password" placeholder="*****" type="password" v-model="data.password" />
       <UIButton @on-click="handleForm" :disabled="isButtonDisabled" liquid>Login</UIButton>
+
+      <div class="flex items-center justify-center">
+        <AuthRegister />
+      </div>
     </div>
-
-
 
 
   </div>

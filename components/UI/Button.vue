@@ -1,6 +1,6 @@
 <template>
 	<button
-		class="flex justify-center items-center text-white bg-blue-400 rounded-full hover:bg-blue-500 font-semibold disabled:bg-blue-300 disabled:cursor-not-allowed"
+		class="flex justify-center items-center   rounded-full  font-semibold disabled:bg-blue-300 disabled:cursor-not-allowed"
 		:disabled="props.disabled" :class="classes" @click="handleClick">
 		<span :class="textFontSize">
 			<slot />
@@ -13,11 +13,13 @@ interface Prop {
 	disabled?: boolean
 	size?: "sm" | "md" | "lg",
 	liquid?: boolean
+	outline?: boolean
 }
 const props = withDefaults(defineProps<Prop>(), {
 	disabled: false,
 	size: "md",
-	liquid: false
+	liquid: false,
+	outline: false
 })
 
 const paddingClasses = computed(() => {
@@ -46,8 +48,9 @@ const defaultWidth = computed(() => {
 			return "w-min"
 	}
 })
+const outlineClasses = computed(() => props.outline ? 'border-blue-500 border-2 text-blue-500 hover:bg-blue-50' : 'hover:bg-blue-500 text-white bg-blue-400')
+const classes = computed(() => `${paddingClasses.value} ${outlineClasses.value} ${props.liquid ? 'w-full' : defaultWidth}`)
 
-const classes = computed(() => `${paddingClasses.value} ${props.liquid ? 'w-full' : defaultWidth}`)
 
 const emits = defineEmits(["onClick"])
 
