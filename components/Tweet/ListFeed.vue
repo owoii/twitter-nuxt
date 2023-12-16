@@ -2,7 +2,7 @@
 	<div>
 		<div v-if="isEmptyArray" class="p-4">
 			<p class="text-center text-gray-500">
-				Not Tweets ☹️
+				还没有人分享书籍📚
 			</p>
 		</div>
 		<div v-else class="pb-4 border-b hover:bg-gray-100 cursor-pointer dark:hover:bg-dim-300"

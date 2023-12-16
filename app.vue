@@ -1,5 +1,5 @@
 <template>
-  <div :class="{ dark: darkMode }" class="select-none">
+  <div :class="{ dark: darkMode }" >
     <div class="bg-white dark:bg-dim-900">
       <LoadingPage v-if="isAuthLoading" />
       <!-- 应用主要界面 -->
@@ -30,14 +30,14 @@
 
       <UIModal :isOpen="postTweetModal" @on-close="handleModalClose" :darkMode="darkMode">
         <TweetForm :reply-to="replyTweet" showReply :user="user || {}" @on-success="handleFormSuccess"
-          placeholder="有什么新鲜事?" />
+          placeholder="有什么新书想分享?" />
       </UIModal>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-const darkMode = ref(true);
+const darkMode = ref(false);
 const { initAuth, useAuthUser, useAuthLoading, logout } = useAuth();
 provide("darkMode", darkMode)
 useHead({

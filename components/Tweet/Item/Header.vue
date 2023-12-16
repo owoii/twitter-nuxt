@@ -9,11 +9,11 @@
 				<nuxt-link to="#">
 					{{ author.handle }}
 				</nuxt-link>
-				. {{ props.tweet.postedAtHuman }}
+				发布于 {{ props.tweet.postedAtHuman }}
 			</span>
 			<p v-if="props.tweet.replyTo" class="text-sm">
 				<span class="text-gray-500">
-					Replying to
+					回复
 				</span>
 				<nuxt-link class="text-blue-400" :to='replyToTweeUrl'>{{ props.tweet.replyTo.author.handle }}</nuxt-link>
 			</p>

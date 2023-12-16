@@ -1,9 +1,13 @@
 <template>
   <div class="h-screen flex flex-col">
-    <div class="p-2 my-2 rounded-full w-min hover:bg-blue-50 dark:hover:bg-white/20" :class="defaultTransition">
+    <div
+      class="p-2 my-2 rounded-full w-min xl:w-full hover:bg-blue-50 dark:hover:bg-white/20"
+      :class="defaultTransition"
+    >
       <NuxtLink to="/">
-        <div class="w-8 h-8">
+        <div class="w-8 h-8 flex items-center gap-4">
           <LogoTwitter />
+          <b class="text-lg hidden xl:block">NLC</b>
         </div>
       </NuxtLink>
     </div>
@@ -13,63 +17,54 @@
         <template #icon>
           <HomeIcon />
         </template>
-        <template #name> Home </template>
+        <template #name> 主页 </template>
       </SidebarLeftTab>
 
-      <SidebarLeftTab>
+      <!-- <SidebarLeftTab>
         <template #icon>
           <HashtagIcon />
         </template>
-        <template #name> Explore </template>
-      </SidebarLeftTab>
+        <template #name> 探索 </template>
+      </SidebarLeftTab> -->
 
       <SidebarLeftTab>
         <template #icon>
           <BellIcon />
         </template>
-        <template #name> Notification </template>
+        <template #name> 通知 </template>
       </SidebarLeftTab>
 
       <SidebarLeftTab>
         <template #icon>
           <InboxIcon />
         </template>
-        <template #name> Messages </template>
+        <template #name> 信息 </template>
       </SidebarLeftTab>
 
-      <SidebarLeftTab>
-        <template #icon>
-          <BookmarkIcon />
-        </template>
-        <template #name> Bookmarks </template>
-      </SidebarLeftTab>
-
-      <SidebarLeftTab>
+      <!-- <SidebarLeftTab>
         <template #icon>
           <DocumentTextIcon />
         </template>
         <template #name> Lists </template>
-      </SidebarLeftTab>
+      </SidebarLeftTab> -->
 
       <SidebarLeftTab>
         <template #icon>
           <UserIcon />
         </template>
-        <template #name> Profile </template>
+        <template #name> 个人信息 </template>
       </SidebarLeftTab>
 
-      <SidebarLeftTab>
+      <!-- <SidebarLeftTab>
         <template #icon>
           <DotsCircleHorizontalIcon />
         </template>
         <template #name> More </template>
-      </SidebarLeftTab>
+      </SidebarLeftTab> -->
 
       <div class="hidden xl:block">
         <UIButton liquid size="lg" @on-click="emits('onTweet')">
-          <span class="font-bold">
-            Tweet
-          </span>
+          <span class="font-bold"> 发帖 </span>
         </UIButton>
       </div>
 
@@ -86,7 +81,7 @@
 </template>
 
 <script setup lang="ts">
-import { HomeIcon } from "@heroicons/vue/solid";
+import { HomeIcon } from '@heroicons/vue/solid'
 import {
   HashtagIcon,
   BellIcon,
@@ -95,14 +90,14 @@ import {
   DocumentTextIcon,
   UserIcon,
   DotsCircleHorizontalIcon,
-  PencilIcon
-} from "@heroicons/vue/outline";
-const { defaultTransition } = useTailwindiConfig();
+  PencilIcon,
+} from '@heroicons/vue/outline'
+const { defaultTransition } = useTailwindiConfig()
 const emits = defineEmits(['onTweet', 'onLogout'])
 interface Props {
   user?: any
 }
 const props = withDefaults(defineProps<Props>(), {
-  user: null
+  user: null,
 })
 </script>

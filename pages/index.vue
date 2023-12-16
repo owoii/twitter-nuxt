@@ -1,8 +1,8 @@
 <template>
-  <MainSection title="Home" :loading="loading">
+  <MainSection title="主页" :loading="loading">
     <!-- {{ user }} -->
     <div class="border-b" :class="twitterBorderColor">
-      <TweetForm :user="user" placeholder="有什么新鲜事?!" @on-success="handFormSuccess"/>
+      <TweetForm :user="user" placeholder="有什么新书想分享?!" @on-success="handFormSuccess"/>
     </div>
     <TweetListFeed :tweets="homeTweets" />
   </MainSection>
@@ -11,7 +11,7 @@
 import { UserPayload } from "~/types/user";
 
 useHead({
-  title: "Twitter / Home"
+  title: "Neo Library社区 / 主页"
 })
 
 const loading = ref(false);

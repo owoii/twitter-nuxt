@@ -16,7 +16,7 @@
     </div>
 
     <!-- 预览卡片 新鲜事 -->
-    <SidebarRightPreviewCard title="What's happening">
+    <SidebarRightPreviewCard title="图书馆中最新的资料">
       <SidebarRightPreviewCardItem v-for="whatshapping in whatsHappingItems">
         <div>
           <h2 class="font-bold text-gray-800 text-md dark:text-white">
@@ -28,7 +28,7 @@
     </SidebarRightPreviewCard>
 
     <!-- 预览卡片 推荐关注 -->
-    <SidebarRightPreviewCard title="Who to follow">
+    <!-- <SidebarRightPreviewCard title="Who to follow">
       <SidebarRightPreviewCardItem v-for="whoToFllow in whoToFllowItems">
         <div class="flex flex-row justify-between items-center p-2">
           <div class="flex" flex-row>
@@ -48,7 +48,7 @@
         </div>
 
       </SidebarRightPreviewCardItem>
-    </SidebarRightPreviewCard>
+    </SidebarRightPreviewCard> -->
 
     <SidebarRightFooter />
   </div>
