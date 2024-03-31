@@ -6,7 +6,11 @@
       </div>
     </div>
     <div class="pt-5 space-y-6">
-      <UIInput label="用户名" placeholder="请输入用户名" v-model="data.username" />
+      <UIInput
+        label="用户名"
+        placeholder="请输入用户名"
+        v-model="data.username"
+      />
 
       <UIInput
         label="密码"
@@ -25,7 +29,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { UserLoginDto } from '~/types/user'
+import type { UserLoginDto } from '#/user'
 const { login } = useAuth()
 interface UserLoginForm extends UserLoginDto {
   loading: boolean
@@ -44,7 +48,6 @@ const handleForm = async () => {
       password: data.password,
     })
   } catch (error) {
-
   } finally {
     data.loading = true
   }

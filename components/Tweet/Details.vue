@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import { UserPayload } from "~/types/user";
+import type { UserPayload } from "#/user";
 
 interface Prop {
 	tweet: unknown

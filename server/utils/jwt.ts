@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import { type UserPayload } from "~/types/user";
+import { type UserPayload } from "#/user";
 import type { EventHandlerRequest, H3Event } from "h3";
 import { RefreshTokenJWTPayload } from "~/types/refreshToken";
 

@@ -8,7 +8,7 @@
   </MainSection>
 </template>
 <script setup lang="ts">
-import { UserPayload } from "~/types/user";
+import type{ UserPayload } from "#/user";
 
 useHead({
   title: "Neo Library社区 / 主页"

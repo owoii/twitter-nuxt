@@ -44,7 +44,7 @@
       </div>
       <div class="ml-auto">
         <UIButton size="sm" :disabled="isDisabled" @on-click="handleFormSubmit">
-          <span class="font-bold"> Tweet </span>
+          <span class="font-bold"> 发布 </span>
         </UIButton>
         <!-- @click="handleFormSubmit" -->
       </div>
@@ -53,7 +53,7 @@
 </template>
 
 <script setup lang="ts">
-import { UserPayload } from '~/types/user'
+import type { UserPayload } from '#/user'
 
 const { twitterBorderColor } = useTailwindiConfig()
 export type TwitterInputData = {

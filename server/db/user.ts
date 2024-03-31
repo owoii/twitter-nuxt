@@ -1,5 +1,5 @@
 import prisma from ".";
-import { type UserCreateInput } from "~/types/user";
+import { type UserCreateInput } from "#/user";
 import { userTransformerSelect } from "../transformers/user";
 import { hashSync } from "bcrypt";
 

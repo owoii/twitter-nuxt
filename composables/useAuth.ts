@@ -1,4 +1,4 @@
-import { UserLoginDto, UserTransformer } from '~/types/user'
+import { UserLoginDto, UserTransformer } from '#/user'
 import jwtDecode from 'jwt-decode'
 import { RefreshTokenJWTPayload } from '~/types/refreshToken'
 export default () => {

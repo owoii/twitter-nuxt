@@ -1,4 +1,4 @@
-import { UserPayload, type UserTransformer } from "~/types/user";
+import { UserPayload, type UserTransformer } from "#/user";
 import { Transformer } from "../utils/transformer";
 
 export const userTransformerSelect: UserTransformer = {

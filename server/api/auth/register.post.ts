@@ -1,5 +1,5 @@
 import { createUser } from "~/server/db/user";
-import { RegisterDto, UserCreateInput } from "~/types/user";
+import { RegisterDto, UserCreateInput } from "#/user";
 
 export default defineEventHandler(async (event) => {
   const body = await readBody<RegisterDto>(event);
