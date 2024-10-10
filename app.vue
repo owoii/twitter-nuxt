@@ -109,32 +109,3 @@ const handleLogout = () => {
   logout();
 };
 </script>
-
-<style>
-@import "tailwindcss";
-@plugin "@tailwindcss/forms";
-
-@theme {
-  --color-dim-50: #5f99f7;
-  --color-dim-100: #5f99f7;
-  --color-dim-200: #38444d;
-  --color-dim-300: #202e3a;
-  --color-dim-400: #253341;
-  --color-dim-500: #5f99f7;
-  --color-dim-600: #5f99f7;
-  --color-dim-700: #192734;
-  --color-dim-800: #162d40;
-  --color-dim-900: #15202b;
-  /*
-      100: "#5F99F7",
-      200: "#38444d",
-      300: "#202e3a",
-      400: "#253341",
-      500: "#5F99F7",
-      600: "#5F99F7",
-      700: "#192734",
-      800: "#162d40",
-      900: "#15202b",
-    } */
-}
-</style>

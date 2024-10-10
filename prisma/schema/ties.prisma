@@ -1,0 +1,20 @@
+// Ties
+
+model Tweet {
+  id   String @id @default(cuid()) @map("_id")
+  text String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  // 作者
+
+  author   User   @relation(fields: [authorId], references: [id])
+  authorId String
+
+  replyToId  String?
+  replyTo    Tweet?      @relation("replies", fields: [replyToId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  replies    Tweet[]     @relation("replies")
+  mediaFiles MediaFile[]
+
+  @@index([authorId, replyToId])
+}

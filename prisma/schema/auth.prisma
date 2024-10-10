@@ -1,0 +1,12 @@
+// Auth schema
+
+model RefreshToken {
+  id    String @id @default(cuid()) @map("_id")
+  token String @unique
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id])
+}

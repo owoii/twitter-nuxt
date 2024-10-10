@@ -5,7 +5,7 @@ import tailwindcssForms from "@tailwindcss/forms";
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: [],
+  modules: ["shadcn-nuxt"],
   pages: true,
   build: {
     transpile: ["@heroicons/vue"],
@@ -25,7 +25,7 @@ export default defineNuxtConfig({
     // add types
     "#": fileURLToPath(new URL("./types", import.meta.url)),
   },
-
+  css:["~/assets/css/tailwind.css"],
   vite: {
     css: {
       transformer: "lightningcss",

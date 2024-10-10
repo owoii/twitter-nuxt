@@ -1,0 +1,19 @@
+// Hitokoto
+
+model Hitokoto {
+  id        Int          @id @default(autoincrement())
+  uuid      String       @unique @default(cuid())
+  hitokoto  String       @db.VarChar(255)
+  length    Int          @default(0)
+  from      String       @default("unknown")
+  createdAt DateTime     @default(now())
+  updatedAt DateTime     @default(now())
+  type      HitokotoType @relation(fields: [typeId], references: [id])
+  typeId    Int
+}
+
+model HitokotoType {
+  id        Int        @id @default(autoincrement())
+  name      String     @unique
+  hitokotos Hitokoto[]
+}
