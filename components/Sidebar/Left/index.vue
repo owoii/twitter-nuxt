@@ -7,7 +7,7 @@
       <NuxtLink to="/">
         <div class="w-8 h-8 flex items-center gap-4">
           <LogoTwitter />
-          <b class="text-lg hidden xl:block">NLC</b>
+          <b class="text-lg hidden xl:block">Bond</b>
         </div>
       </NuxtLink>
     </div>
