@@ -1,11 +1,14 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 import { fileURLToPath } from "url";
 import tailwindcss from "@tailwindcss/vite";
 import tailwindcssForms from "@tailwindcss/forms";
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ["shadcn-nuxt"],
+  modules: [
+    "@nuxt/image",
+    "@nuxtjs/i18n",
+    'unplugin-icons/nuxt',
+  ],
   pages: true,
   build: {
     transpile: ["@heroicons/vue"],
@@ -25,12 +28,15 @@ export default defineNuxtConfig({
     // add types
     "#": fileURLToPath(new URL("./types", import.meta.url)),
   },
-  css:["~/assets/css/tailwind.css"],
+  css: ["~/assets/css/tailwind.css"],
   vite: {
     css: {
       transformer: "lightningcss",
     },
     plugins: [tailwindcss()],
+  },
+  i18n: {
+    vueI18n: './i18n/index.ts'
   },
   compatibilityDate: "2024-10-10",
 });

@@ -43,9 +43,9 @@
         </TweetFormIcon>
       </div>
       <div class="ml-auto">
-        <UIButton size="sm" :disabled="isDisabled" @on-click="handleFormSubmit">
+        <UiButton size="sm" :disabled="isDisabled" @on-click="handleFormSubmit">
           <span class="font-bold"> 发布 </span>
-        </UIButton>
+        </UiButton>
         <!-- @click="handleFormSubmit" -->
       </div>
     </div>

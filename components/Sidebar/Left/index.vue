@@ -20,12 +20,12 @@
         <template #name> 主页 </template>
       </SidebarLeftTab>
 
-      <!-- <SidebarLeftTab>
+      <SidebarLeftTab>
         <template #icon>
           <HashtagIcon />
         </template>
         <template #name> 探索 </template>
-      </SidebarLeftTab> -->
+      </SidebarLeftTab>
 
       <SidebarLeftTab>
         <template #icon>
@@ -41,12 +41,12 @@
         <template #name> 信息 </template>
       </SidebarLeftTab>
 
-      <!-- <SidebarLeftTab>
+      <SidebarLeftTab>
         <template #icon>
           <DocumentTextIcon />
         </template>
         <template #name> Lists </template>
-      </SidebarLeftTab> -->
+      </SidebarLeftTab>
 
       <SidebarLeftTab>
         <template #icon>
@@ -55,25 +55,25 @@
         <template #name> 个人信息 </template>
       </SidebarLeftTab>
 
-      <!-- <SidebarLeftTab>
+      <SidebarLeftTab>
         <template #icon>
           <DotsCircleHorizontalIcon />
         </template>
         <template #name> More </template>
-      </SidebarLeftTab> -->
+      </SidebarLeftTab>
 
       <div class="hidden xl:block">
-        <UIButton liquid size="lg" @on-click="emits('onTweet')">
+        <UiButton liquid size="lg" @on-click="emits('onTweet')">
           <span class="font-bold"> 发帖 </span>
-        </UIButton>
+        </UiButton>
       </div>
 
       <div class="block xl:hidden">
-        <UIButton @on-click="emits('onTweet')">
+        <UiButton @on-click="emits('onTweet')">
           <div class="w-6 h-6 font-bold">
             <PencilIcon />
           </div>
-        </UIButton>
+        </UiButton>
       </div>
     </div>
     <SidebarLeftAccountMenu :user="props.user" @on-logout="emits('onLogout')" />

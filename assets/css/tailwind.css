@@ -1,7 +1,16 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/forms";
 
+@layer base {
+  :root{
+    --primary:#F3A0B5;
+  }
+}
+
 @theme {
+  
+  --color-primary-50:#eeeeff;
+
   --color-dim-50: #5f99f7;
   --color-dim-100: #5f99f7;
   --color-dim-200: #38444d;
@@ -12,6 +21,12 @@
   --color-dim-700: #192734;
   --color-dim-800: #162d40;
   --color-dim-900: #15202b;
+
+  --color-background:#ffffff;
+  --color-primary: var(--primary);
+  --color-primary-foreground:#F8FAFC;
+  --color-muted-foreground:#64748B;
+  --color-border:#E2E8F0;
 }
 
 @layer base {
@@ -31,7 +46,7 @@
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
 
-    --primary: 222.2 47.4% 11.2%;
+    /* --primary: 222.2 47.4% 11.2%; */
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -64,7 +79,7 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
 
-    --primary: 210 40% 98%;
+    /* --primary: 210 40% 98%; */
     --primary-foreground: 222.2 47.4% 11.2%;
 
     --secondary: 217.2 32.6% 17.5%;

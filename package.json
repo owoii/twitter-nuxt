@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "nuxt dev --host",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
@@ -12,15 +12,17 @@
     "lint": "oxlint"
   },
   "devDependencies": {
+    "@iconify-json/ph": "^1.2.1",
     "@nuxt/devtools": "latest",
-    "@nuxtjs/tailwindcss": "^6.12.1",
+    "@nuxt/image": "^1.8.1",
+    "@nuxtjs/i18n": "npm:@nuxtjs/i18n-edge",
     "@types/node": "^18.17.19",
     "nuxt": "^3.13.2",
     "oxlint": "^0.9.10",
     "prettier": "^3.0.3",
     "prisma": "^5.20.0",
-    "shadcn-nuxt": "^0.10.4",
-    "shadcn-vue": "^0.10.5"
+    "shadcn-vue": "^0.10.5",
+    "unplugin-icons": "^0.19.3"
   },
   "dependencies": {
     "@headlessui/vue": "^1.7.16",
@@ -31,6 +33,7 @@
     "@types/bcrypt": "^5.0.0",
     "@types/formidable": "^3.4.3",
     "@types/jsonwebtoken": "^9.0.3",
+    "@vueuse/core": "^11.1.0",
     "bcrypt": "^5.1.1",
     "class-variance-authority": "^0.7.0",
     "cloudinary": "^1.41.0",
